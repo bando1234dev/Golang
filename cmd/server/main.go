@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import "golang-BE/internal/routers"
 
-func main(){
-	fmt.Println("Startin")
+func main() {
+  r := routers.NewRouters()
+
+  r.Run(":8002")
 }

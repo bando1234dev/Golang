@@ -1,6 +1,7 @@
 package routers
 
 import (
+	c "golang-BE/internal/controller"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -13,11 +14,12 @@ func NewRouters() *gin.Engine {
   v1 := r.Group(("v1/2024"))
   {
     v1.GET("/ping", Pong)
-    v1.PUT("/ping", Pong)
-    v1.PATCH("/ping", Pong)
-    v1.DELETE("/ping", Pong)
-    v1.HEAD("/ping", Pong)
-    v1.OPTIONS("/ping", Pong)
+    v1.GET("/user/1", c.NewUserController().GetUserByID)
+    // v1.PUT("/ping", Pong)
+    // v1.PATCH("/ping", Pong)
+    // v1.DELETE("/ping", Pong)
+    // v1.HEAD("/ping", Pong)
+    // v1.OPTIONS("/ping", Pong)
   }
 
 	return r

@@ -2,7 +2,6 @@ package controller
 
 import (
 	"golang-BE/internal/service"
-	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
@@ -18,8 +17,9 @@ func NewUserController() *UserController {
 }
 
 func (us *UserController) GetUserByID(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{
-		"message": us.userService.GetInfoUser(),
-		"users": []string{"geng","g2","prx"},
-	})
+	// if err != nil {
+	// 	return response.ErrorResponse(c,20003,"")
+	// }
+
+	// return response.SuccessResponse(c,20001,[]string{"hello"})
 }

@@ -1,9 +1,7 @@
 package main
 
-import "golang-BE/internal/routers"
+import "golang-BE/internal/initialize"
 
 func main() {
-  r := routers.NewRouters()
-
-  r.Run(":8002")
+  initialize.Run()
 }
